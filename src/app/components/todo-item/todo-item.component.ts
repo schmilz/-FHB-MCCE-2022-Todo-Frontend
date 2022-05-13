@@ -8,12 +8,12 @@ import { DeleteDialogComponent } from '../delete-dialog/delete-dialog.component'
 import { MatSnackBar } from '@angular/material/snack-bar';
 
 @Component({
-  selector: 'todo-item',
+  selector: 'app-todo-item',
   templateUrl: './todo-item.component.html',
   styleUrls: ['./todo-item.component.css'],
 })
 
-export class TodoItemComponent implements OnInit {
+export class TodoItemComponent {
 
   @Input() item!: TodoItem;
   @ViewChild("itemContainer") todoItemContainer!: ElementRef;
@@ -24,9 +24,7 @@ export class TodoItemComponent implements OnInit {
     private snackBar: MatSnackBar
   ) {}
 
-  ngOnInit(): void {
-  }
-
+ 
   openEditDialog (): void {
     const dialogRef = this.dialog.open(EditDialogComponent, {
       data: {
